@@ -1,0 +1,7 @@
+CLIENT_ID = 'PRIV-artivarshney.15lw.Project-A'
+CLIENT_SECRET = '661b1bf7-a288-4c8f-b351-a9bc7c806fda'
+BASE_URL = 'https://oauth-cpaas.att.com'
+DESTINATION_NUMBER = '+12106605929'
+SENDER_NUMBER = '+14086203310'
+TEST_EMAIL = 'artiv@hcl.com'
+TEST_PASSWORD = 'Test@123'
