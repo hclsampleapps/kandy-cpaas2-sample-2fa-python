@@ -1,4 +1,7 @@
 # kandy-cpaas2-sample-2fa-python
+
+![Maintenance](https://img.shields.io/maintenance/no/2020?style=flat-square)
+
 This is an elementary  login authentication use case of two-factor authentication via SMS. The main focus of this application is to understand and implement the 2FA flow, so least amount of stress is given to the authentication/login mechanism.
 
 ## Installation/Setup
