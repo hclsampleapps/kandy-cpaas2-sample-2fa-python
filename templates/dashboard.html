@@ -1,18 +1,17 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',    filename='css/main.css') }}">
     <title>2FA | Dashboard</title>
 </head>
-
 <body>
-    <form action="/logout" method="get" class="box centered-box">
+    <h2>Two-Factor Authentication (2FA) App</h2>
+    <form action="/logout" method="get">
         <p>You are now logged in.</p>
         <button type="submit">Logout</button>
     </form>
 </body>
-
 </html>

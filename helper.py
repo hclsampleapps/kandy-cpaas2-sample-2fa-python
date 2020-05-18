@@ -3,8 +3,8 @@ from constants import (
   CLIENT_ID,
   CLIENT_SECRET,
   BASE_URL,
-  SENDER_NUMBER,
-  DESTINATION_NUMBER
+  DESTINATION_NUMBER,
+  DESTINATION_EMAIL
 )
 
 def initialise_client():
@@ -15,18 +15,23 @@ def initialise_client():
   })
   return client
 
-def send_twofactor_code():
+def send_twofactor_code(email):
   client = initialise_client()
-  params = {
-    'message': 'Your verification code {code}',
-    'destination_address': DESTINATION_NUMBER,
-    'sender_address': SENDER_NUMBER,
-    'method': 'sms',
-    'expiry': 360,
-    'length': 6,
-    'type': 'alphanumeric'
-  }
-  response = client.twofactor.send_code(params)
+  if email:
+    params = {
+      'message': 'Your verification code {code}',
+      'destination_address': DESTINATION_EMAIL,
+      'method': 'email',
+      'subject': 'Twofactor verification'
+    }
+    response = client.twofactor.send_code(params)
+    return response
+  else:
+    params = {
+      'message': 'Your verification code {code}',
+      'destination_address': DESTINATION_NUMBER,
+    }
+    response = client.twofactor.send_code(params)
   return response
 
 
@@ -38,4 +43,3 @@ def verify_code(code_id, verification_code):
   }
   response = client.twofactor.verify_code(params)
   return response
-  
